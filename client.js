@@ -16,25 +16,25 @@ const odbc = require('odbc')
 var conf = require("./config.json")
 var cnf = require("./config.js")
 var param = new cnf("./config.json")
-var codice= param.get("ultimoCodice", 100)
+var codice = param.get("ultimoCodice", 100)
 var cn = param.get("connessione", "DSN=jeda_sim")
 
 
-var ultimoId= readId();
+var ultimoId = readId();
 console.log(ultimoId)
-console.log("L'ultimo id è : "+codice)
-async function readId(){
-    try {
-        const db = await odbc.connect(cn)
-        var strQuery="select max(codice_articolo) as ultimo_id from gedamaga"
-        await db.beginTransaction()
-        const data = await db.query(strQuery)
+console.log("L'ultimo id è : " + codice)
+async function readId() {
+	try {
+		const db = await odbc.connect(cn)
+		var strQuery = "select max(codice_articolo) as ultimo_id from gedamaga"
+		await db.beginTransaction()
+		const data = await db.query(strQuery)
 		await db.commit()
 		var id = data[0].ultimo_id
-		console.log("id database corrente : "+id)
-    } catch(err){
-        console.log("errore")
+		console.log("id database corrente : " + id)
+	} catch (err) {
+		console.log("errore")
 		console.error(err)
-    }
+	}
 
 }
