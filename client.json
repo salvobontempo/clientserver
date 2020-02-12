@@ -1,0 +1,18 @@
+{
+    "ultimoCodice": 6,
+    "connessione": "DSN=JEDA_SIM",
+    "clienti": [
+        {
+            "nome": "cliente1",
+            "server": "http://localhost:1337/sync",
+            "ultimoCodice": 2
+        },
+        {
+            "nome": "cliente2",
+            "server": "http://192.168.0.227:1337/sync",
+            "ultimoCodice": 3
+        }
+    ],
+    "mioparametro": "miovalore",
+    "mioparametro2": "miovalore2"
+}
