@@ -10,6 +10,7 @@
         storicizzare nei file di configurazione l'id restituito.
 */
 const odbc = require('odbc')
+//facciamo una modifica
 
 
 
